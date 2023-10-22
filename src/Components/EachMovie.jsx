@@ -11,7 +11,7 @@ const EachMovie = () => {
   const index = +id;
 
   useEffect(() => {
-    const returnedMovie = movieData.moviesArray.find(
+    const returnedMovie = movieData.find(
       (movy) => movy.id === index
     );
     setMovie(returnedMovie);

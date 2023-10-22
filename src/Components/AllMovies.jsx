@@ -9,7 +9,7 @@ const AllMovies = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const retrievedListofMovies = movieData.moviesArray;
+    const retrievedListofMovies = movieData;
     setMovieArray(retrievedListofMovies);
     setTimeout(() => {
       setIsLoading(false);

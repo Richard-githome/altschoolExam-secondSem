@@ -288,10 +288,10 @@ small{
   margin: 0 auto;
 }
 .form_password_matching {
-  color: red;
+  color: rgb(64, 143, 64);;
 }
 .form_password_notMatching {
-  color: rgb(64, 143, 64);
+  color: red;
 }
 /* --------------------------------------------------------------------> MEDIA QUERIES CSS*/
 /* -----------------------------> FOR LAPTOPS CSS */

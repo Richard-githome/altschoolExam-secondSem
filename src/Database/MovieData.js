@@ -34,5 +34,5 @@ const moviesArray = [
     }
   ];
   
-  export default { moviesArray };
+  export default moviesArray;
   
