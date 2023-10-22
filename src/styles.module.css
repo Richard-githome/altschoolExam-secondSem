@@ -1,0 +1,429 @@
+/* -------------------------------------------------------------------------->Global CSS */
+* {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+html {
+  background-color: darkslategrey;
+}
+.App {
+  width: 80%;
+  margin: 100px auto;
+}
+span {
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------->All Errors: Error 404, ErrorBoundary, etc, CSS*/
+.errorPage, .fallBack_wrapper {
+  width: 70%;
+  margin: 10rem auto;
+  padding: 3rem;
+  border-radius: 1rem;
+  background-color: lightslategray;
+}
+.errorPage_title {
+  padding: 1rem;
+}
+.errorPage_brief {
+  padding: 1rem;
+}
+.returnError_btn {
+  font-size: 1.4rem;
+  margin: 3rem auto;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: rgb(66, 111, 111);
+}
+.existing_account_error {
+  width: 90;
+  background-color: rgb(215, 126, 139);
+  font-size: smaller;
+  font-weight: 600;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+}
+
+/* ----------------------------------------------------------------------------->FallBack CSS */
+.fallBack_icon {
+  width: 5rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px 5px 0px 5px;
+  animation: rotation 5s infinite linear;
+
+}
+.fallBack_brief{
+  margin: 1rem;
+}
+/* ----------------------------------------------------------------------------->NavBar CSS */
+.navbar_wrapper {
+  width: 95%;
+  height: 50px;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  margin: 0 auto;
+  padding: 1rem 0;
+  border-bottom: 0.2px solid rgb(124, 124, 124);
+}
+.navIcon_container {
+  display: none;
+/*   
+  border: 1px solid blueviolet; */
+}
+.navLink_container{
+  width: 60%;
+  margin: 0.8rem auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 0.8rem;
+}
+.navbar_items {
+  /* margin-right: 4.5rem; */
+  padding: 2px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(195, 195, 195);
+  &:hover {
+    border-radius: 5px;
+    font-weight: 700;
+    /* background-color: rgb(179, 196, 196); */
+    color: rgb(23, 23, 23);
+    cursor: pointer;
+  }
+  /* display: inline; */
+}
+.nav_btn_open {
+  /* padding: 5px; */
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  display: none;
+  /* opacity: 0; */
+}
+.nav_btn_close {
+  /* padding: 5px; */
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  display: none;
+}
+/* ------------------------------------------------------------------------------>HomePage CSS */
+.homePage_wrapper {
+  width: 80%;
+  margin: 10rem auto;
+}
+.homPage_subTitle{
+  margin: 2rem 0;
+}
+.homePage_errorBoundary_btn {
+  font-size: 1.2rem;
+  margin: 3rem auto;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: rgb(147, 147, 147);
+  &:hover{
+    background-color: rgb(193, 193, 193);
+    font-weight: 600;
+  }
+}
+.homePage_short_note {
+  width: 80%;
+  margin: 30px auto;
+  padding: 20px;
+  font-size: 1.3rem;
+  font-weight: 300;
+  border-top: 3px solid rgb(147, 147, 147);
+  border-left: 3px solid rgb(147, 147, 147);
+  border-right: 3px dashed rgb(147, 147, 147);
+  border-bottom: 3px dashed rgb(147, 147, 147);
+  border-radius: 10px;
+}
+/* -------------------------------------------------------------------------> Movies CSS */
+.movie_wrapper {
+  width: 90%;
+  display: flex;
+  margin: 150px auto;
+  padding: 10px;
+  border-top: 1px dashed grey;
+  border-bottom: 1px dashed grey;
+  border-left: none;
+  border-right: none;
+}
+.allMovies_title_container {
+  width: 30%;
+  margin: 2rem auto;
+}
+.movie_container {
+  width: 35%;
+  margin-right: 10px;
+  padding-bottom: 10px;
+  border: 2px solid grey;
+  border-radius: 6px;
+}
+.movie_button {
+  font-size: 16px;
+  font-weight: 300;
+}
+/* -------------------------------------------------------------------> COntact CSS */
+.contact_wrapper {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin: 10rem auto;
+  padding: 1rem;
+}
+.contact_container {
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  margin: 2rem auto;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-start;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+/* ---------------------------------------------------------------------->Each Movie CSS */
+.eachPost_wrapper {
+  width: 80%;
+  margin: 70px auto;
+  padding: 30px;
+  text-align: left;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+/* -----------------------------------------------------------------------> Loading Simulator CSS */
+.loadericon_wrapper {
+  width: 20%;
+  margin: 0 auto;
+  padding: 20rem 1rem;
+}
+.loadericon_container {
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px 5px 0px 5px;
+  border-radius: 10px;
+  animation: rotation 3s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+/* ------------------------------------------------------------------------->Authentication Layout CSS */
+.auth_wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.authHeader_wrapper {
+  width: 40%;
+  margin: 3rem auto 0; 
+  padding: 1rem 0.5rem;
+  cursor: pointer;
+}
+.authHeader_title {
+  color: rgb(204, 204, 204);
+}
+/* ------------------------------------------------------------------------->Register & Login CSS */
+.register_form, .login_form {
+  width: 25%;
+  margin: 2rem auto;
+  border: 1px solid darkblue;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: left;
+  background-color: rgb(159, 204, 202);
+}
+.register_label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem ;
+}
+.register_title {
+  margin: 0 auto 2rem;
+  text-align: left;
+}
+.register_input {
+  width: 95%;
+  height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin: 0.5rem 0 1.5rem 0;
+  padding: 0.4rem;
+  text-align: left;
+}
+.register_button, .login_button {
+  width: 98%;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin: 0.3rem auto 1rem;
+  border: none;
+  background-color: lightslategrey;
+  &:hover {
+    border: 2px solid darkblue;
+    cursor: pointer;
+  }
+}
+small{
+  width: 90%;
+  margin: 0 auto;
+}
+.form_password_matching {
+  color: red;
+}
+.form_password_notMatching {
+  color: rgb(64, 143, 64);
+}
+/* --------------------------------------------------------------------> MEDIA QUERIES CSS*/
+/* -----------------------------> FOR LAPTOPS CSS */
+@media screen and (max-width: 965px) {
+  .navLink_container {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .homePage_wrapper {
+    text-align: center;
+  }
+  .homPage_title {
+    font-size: 1rem;
+  }
+  .login_form, .register_form {
+    width: 70%;
+    margin: 0 auto 3rem;
+  }
+
+}
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .login_form, .register_form {
+    width: 50%;
+    margin: 0 auto 3rem;
+  }
+
+}
+
+@media screen and (min-width: 769px) {
+  .navIcon_container {
+    display: none;
+  }
+  .navLink_container {
+    width: 80%;
+  }
+}
+
+
+@media screen and (max-width: 768px){
+  /* .register_form, .login_form {
+    width: 25%;
+    margin: 2rem auto;
+    border: 1px solid darkblue;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: left;
+    background-color: rgb(159, 204, 202);
+  } */
+  
+  .navLink_container {
+    display: none;
+  }
+  .navIcon_container {
+    display: unset;
+    padding: 1rem 0.5rem;
+    float: left;
+  }
+  .nav_btn_close {
+    display: unset;
+    position: fixed;
+    margin: 0.5rem ;
+    padding: 2rem 0.5rem ;
+    float: right;
+    /* outline: none; */
+    top: 1rem;
+    right: 2.5rem;
+  }
+  .nav_btn_open {
+    display: unset;
+    float: right;
+    padding: 1rem 0.5rem;
+  }
+  .navLink_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: rgb(32, 50, 50);
+    transition: 0.5s;
+    transform: translateY(-100vh) ;
+  }
+  .navLink_container2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: rgb(32, 50, 50);
+    transition: 1s;
+    transform: none ;
+  }
+  .movie_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+  .movie_container {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .contact_wrapper {
+    width: 90%;
+    margin: 0 auto;
+
+  }
+  .contact_container {
+    width: 80%;
+    margin: 1rem auto 0;
+    font-size: .7rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .navLink_container {
+    width:max-content;
+    grid-gap: 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
